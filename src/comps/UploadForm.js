@@ -7,7 +7,7 @@ const UploadForm = () => {
   // declare allowed file types 
   const types = ['image/jpeg', 'image/png']
 
-  const changeHandle = (e) => {
+  const handleChange = (e) => {
     
     let selected = e.target.files[0]
 
@@ -24,7 +24,10 @@ const UploadForm = () => {
   }
   return (
     <form>
-      <input type="file" onChange={changeHandle} />
+      <label title="Add Image">
+        <input type="file" onChange={handleChange} />
+        <span>+</span>
+      </label>
       <div className="output">
         { error && <div className="error">{ error }</div> }
         { file && <div>{ file.name }</div> }
